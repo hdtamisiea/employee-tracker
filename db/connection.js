@@ -9,6 +9,4 @@ const db = mysql.createConnection({
   database: 'tracker'
 });
 
-
-
 module.exports = db;
