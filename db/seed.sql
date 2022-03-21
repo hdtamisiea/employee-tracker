@@ -1,5 +1,3 @@
-use tracker;
-
 INSERT INTO department
     (name)
 VALUES

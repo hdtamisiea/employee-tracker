@@ -37,7 +37,7 @@ const mainMenu = () => {
       } else if (input.userOption == "Update Employee Role") {
         updateEmployeeRole();
       } else if (input.userOption == "Delete Employee") {
-          deleteEmployee();
+        deleteEmployee();
       }
     });
 };
@@ -145,12 +145,12 @@ const addEmployee = () => {
         type: "input",
         name: "managerID",
         message: "What is the manager ID?",
-      }
+      },
     ])
     .then((input) => {
       const query = `INSERT INTO employee (first_name, last_name, role_id, manager_id) VALUES ('${input.firstName}', '${input.lastName}', '${input.roleID}', '${input.managerID}')`;
 
-      connection.query(query, (err, res) => {
+      connection.query(query, (err, result) => {
         console.log("Employee added successfully!");
 
         //   Returns to main menu after department has been added
@@ -161,45 +161,47 @@ const addEmployee = () => {
 
 // Update employee role
 const updateEmployeeRole = () => {
-    inquirer
+  inquirer
     .prompt([
       {
-        name: 'employeeID',
-        type: 'input',
-        message: 'What is the ID of the employee you would like to update?',
+        type: "input",
+        name: "employeeID",
+        message: "What is the ID of the employee you would like to update?",
       },
       {
-          name: 'roleID',
-          type:'input',
-          message: 'What is the ID of the new role?',
-      }
+        type: "input",
+        name: "roleID",
+        message: "What is the ID of the new role?",
+      },
     ])
     .then((input) => {
       const query = `UPDATE employee SET role_id = ${input.roleID} WHERE id = ${input.employeeID}`;
 
-      connection.query(query,(err, res) => {
-          console.log("The employee has been updated!");
-          mainMenu();
+      connection.query(query, (err, res) => {
+        console.log("The employee has been updated!");
+        mainMenu();
+      });
     });
-})};
+};
 
 const deleteEmployee = () => {
-    inquirer
+  inquirer
     .prompt([
       {
-        name: 'employeeID',
-        type: 'input',
-        message: 'What is the ID of the employee you would like to delete?',
-      }
+        name: "employeeID",
+        type: "input",
+        message: "What is the ID of the employee you would like to delete?",
+      },
     ])
     .then((input) => {
       const query = `DELETE FROM employee WHERE id = ${input.employeeID}`;
 
-      connection.query(query,(err, res) => {
-          console.log("The employee has been deleted!");
-          mainMenu();
+      connection.query(query, (err, res) => {
+        console.log("The employee has been deleted!");
+        mainMenu();
+      });
     });
-})};
+};
 
 // Beginning call to main menu
 mainMenu();
