@@ -27,7 +27,7 @@ The user would clone the repo from GitHub, type npm install in their command lin
 
 ## Usage
 
-![Landing Page View](No screenshot provided.)
+![Landing Page View](/assets/images/page.png)
 
 View walkthrough video here:
 https://drive.google.com/file/d/1ZK_9W8aTSEHmcy3t_wa1_xFyUmXSIv7N/view
