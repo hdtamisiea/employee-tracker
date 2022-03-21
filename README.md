@@ -30,7 +30,7 @@ The user would clone the repo from GitHub, type npm install in their command lin
 ![Landing Page View](No screenshot provided.)
 
 View walkthrough video here:
-No video provided.
+https://drive.google.com/file/d/1ZK_9W8aTSEHmcy3t_wa1_xFyUmXSIv7N/view
 
 Deployed site can be viewed at: 
 [https://hdtamisiea.github.io/employee-tracker/]
